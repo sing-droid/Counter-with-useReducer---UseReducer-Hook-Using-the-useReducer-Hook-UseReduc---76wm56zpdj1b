@@ -4,21 +4,15 @@ import '../styles/App.css';
 const initialState = {
   count: 0,
 };
-const reducer = (state,action) =>{
+function reducer(state, action) {
   switch (action.type) {
-      case 'INCREMENT':
-        return {
-          ...state,
-          [action.name]: state[action.name] + 1,
-        };
-      case 'DECREMENT':
-        return {
-          ...state,
-          [action.name]: state[action.name] - 1,
-        };
-      default:
-        return state;
-    }
+    case "INCREMENT":
+      return { count: state.count + 1 };
+    case "DECREMENT":
+      return { count: state.count - 1 };
+    default:
+      throw new Error();
+  }
 }
 
 const App = () => {
